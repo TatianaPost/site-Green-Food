@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    position: relative;
+    padding: 0 100px;
+    min-height: 860px; /* прямоугольник справа по всей высоте и ширина 100 */
+}
+.container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    /*left: 0; КВАДРАТ СЛЕВА */
+    right: 0;/*  КВАДРАТ СПРАВА */
+    width: 350px;
+    height: 100%;
+    background: #333;
+    z-index: -2;
+}
+.container::after{
+    content: "Healthy";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 300px;
+    z-index: -2;
+    font-weight: 700;
+    color: #000;
+    opacity: 0.04; /* НАЗВАНИЕ СТАНОВИТСЯ ПОЛУПРОЗРАЧНЫМ  */
+}
+header{
+    display: flex;
+    justify-content: space-between; /* menu УЛИТЕЛО ВПРАВО  */
+    align-items: center;
+    padding: 30px 0; /* ВСЕ ОПУСТИЛОСЬ ВНИЗ НА 30px  */
+}
+header .logo{
+    font-weight: 700;
+    text-transform: uppercase; /* ТЕКСТ БОЛЬШИМИ БУКВАМИ  */
+    color: #333;
+    text-decoration: none; /*  УБРАТЬ ПОДЧЕРКИВАНИЕ  */
+    font-size: 30px;
+}
+header .logo span{
+    color: #78ff00;
+}
+header ul{
+    position: relative;
+    display: flex; /*  Элементы выстраиваются в одну линию  */
+}
+header ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+header ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 4px 10px;
+    color: #333;
+    text-decoration: none; /*  УБИРАЕТ ПОДЧЕРКИВАНИЕ  */ 
+}
+header ul li:nth-child(3) a, /* 3 и 4 слово в МЕНЮ  */
+header ul li:nth-child(4) a{
+    color: #fff;
+}
+header ul li a::before{ /* КВАДРАТИК НА МЕНЮ  */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #78ff00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+header ul li a:hover:before,
+header ul li a.active::before{
+    width: 40px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+.content .banner__text{
+    position: relative;
+    max-width: 500px;
+    margin-right: 50px;
+}
+.content .banner__text h2{
+    font-size: 54px;
+    text-transform: uppercase; /* ТЕКСТ БОЛЬШИМИ БУКВАМИ  */
+    font-weight: 800;
+    line-height: 60px;/* МЕЖДУСТРОЧНОЕ РАССТОЯНИЕ */
+    color: #333;
+}
+.content .banner__text p{
+    font-size: 18px;
+    color: #333;
+    line-height: 29px;
+    margin: 20px 0;
+}
+.content .banner__text a{
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px;
+}
+.content .banner__text a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: #78ff00;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+}
+.content .banner__text a:hover:before{
+    width: 100%;
+}
+.content .banner__img{
+    position: relative;
+    width: 440px;
+    height: 440px;
+    background: #000;    
+}
+.content .banner__img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+.icons .sci,
+.icons .controls{
+    position: relative;
+    display: flex;
+}
+.icons .sci li{
+    list-style: none;
+    margin-right: 30px;
+}
+.icons .sci li img{
+    display: inline-block;
+    max-height: 24px;
+    transition: 0.5s ease-in-out;
+}
+.icons .sci li:hover img{
+    transform: translateY(-10px);
+}
+.icons .controls li{
+    list-style: none;
+    margin-left: 20px;
+    cursor: pointer;
+    filter: invert(1);
+    transition: 0.5s ease-in-out;
+}
